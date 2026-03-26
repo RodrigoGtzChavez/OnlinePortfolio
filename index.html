@@ -40,32 +40,9 @@ body {
   font-family: 'Instrument Sans', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
-  cursor: none;
   transition: background-color 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* CURSOR */
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--lime);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-  mix-blend-mode: difference;
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(200,255,87,0.4);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
-}
 
 /* NOISE OVERLAY */
 body::before {
@@ -1017,9 +994,9 @@ footer {
         <span class="thin"></span>
       </h1>
       <p class="hero-desc">
-      º Estudiante de Ingenieria en Software <br> º Desarrollador independiente construyendo desde cero.<br>
-        º  Negocios | Soluciones <br>
-        <strong>Buscando propòsito mediante Tecnologìa — Digital.</strong>
+      º Estudiante de Ingenieria en Software <br> º Desarrollador independiente.<br>
+        <br>
+        <strong>Soluciones con   Propósito a través de la Tecnologìa — Digital.</strong>
       </p>
       <br>
       <!-- <div class="hero-actions">
@@ -1102,13 +1079,23 @@ footer {
       </div>
     </div>
 
-    <!-- IKIGAI VISUAL -->
-    <div class="ikigai-box reveal" style="padding: 1.8rem;">
+
+
+    <!-- Ikigai visual -->
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.8rem;">
+      <div style="font-family:'Syne',sans-serif; font-weight:700; color:var(--white); margin-bottom:0.25rem;">Rodrigo Gtz Chavez</div>
+      <!-- <div style="font-size:0.78rem; color:var(--muted); margin-bottom:1.2rem;">El sweet spot que estoy buscando — en tiempo real.</div> -->
+      <canvas id="ikigaiCanvas" width="280" height="260" style="display:block; margin:0 auto;"></canvas>
+      <div style="margin-top:1rem; font-size:0.75rem; color:var(--muted); line-height:1.6; text-align:center;">
+      </div> 
+    </div>
+    <!-- Primer VISUAL -->
+    <!-- <div class="ikigai-box reveal" style="padding: 1.8rem;">
       <div class="ikigai-title">Rodrigo Gtz Chavez</div>
       <div class="ikigai-sub" style="margin-bottom:1rem;"> </div>
       <canvas id="radarChart" width="300" height="300" style="display:block; margin:0 auto;"></canvas>
       <div style="margin-top:1.4rem; display:flex; flex-direction:column; gap:0.55rem;" id="skillLegend"></div>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -1116,7 +1103,7 @@ footer {
 <section id="skills" style="background:transparent; border-top:1px solid var(--border);">
   <div class="section-header reveal">
     <div>
-      <div class="section-tag">Habilidades</div>
+      <div class="section-tag">Mis Habilidades</div>
       <!-- <h2 class="section-title">Lo que <span class="hl">traigo</span><br>a la mesa</h2> -->
     </div>
     <p class="services-intro reveal"></p>
@@ -1127,27 +1114,26 @@ footer {
 
     <!-- Radar chart -->
     <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.8rem;">
-      <div style="font-family:'Syne',sans-serif; font-weight:700; color:var(--white); margin-bottom:0.25rem;">Mayormente Competente en:</div>
+      <div style="font-family:'Syne',sans-serif; font-weight:700; color:var(--white); margin-bottom:0.25rem;">Soy Mayormente Competente en:</div>
       <!-- <div style="font-size:0.78rem; color:var(--muted); margin-bottom:1rem;">Autoevaluación — en constante actualización.</div> -->
       <canvas id="radarChart2" width="280" height="280" style="display:block; margin:0 auto;"></canvas>
       <div style="margin-top:1.2rem; display:flex; flex-direction:column; gap:0.5rem;" id="skillLegend2"></div>
     </div>
 
-    <!-- Ikigai visual -->
-  <!--  <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.8rem;">
-      <div style="font-family:'Syne',sans-serif; font-weight:700; color:var(--white); margin-bottom:0.25rem;">Mi Ikigai</div>
-      <div style="font-size:0.78rem; color:var(--muted); margin-bottom:1.2rem;">El sweet spot que estoy buscando — en tiempo real.</div>
-      <canvas id="ikigaiCanvas" width="280" height="260" style="display:block; margin:0 auto;"></canvas>
-      <div style="margin-top:1rem; font-size:0.75rem; color:var(--muted); line-height:1.6; text-align:center;">
-        Tecnología · Negocios · Música · Creatividad
-      </div>
-    </div>
-  </div> -->
-  <!-- SKILL TAGS GRID -->
+      <!-- SKILL TAGS GRID -->
+
   <div class="reveal">
+
     <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:0.85rem; color:var(--white); margin-bottom:1.2rem; letter-spacing:0.05em; text-transform:uppercase; font-size:0.65rem; color:var(--muted);"></div>
+
     <div style="display:flex; flex-wrap:wrap; gap:0.7rem;" id="skillTagsGrid">Proficiente en:</div>
+
   </div>
+
+
+
+    
+  </div> 
 
   <!-- LANGUAGES -->
   <div class="reveal" style="margin-top:2.5rem;">
@@ -1248,117 +1234,13 @@ footer {
 
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header reveal">
-    <div>
-      <div class="section-tag">Servicios</div>
-      <!-- <h2 class="section-title">Top <span class="hl">10</span><br>auto-empleos</h2> -->
-    </div>
-    <p class="services-intro reveal">
-      
-    </p>
-  </div>
-
-  <div class="services-tabs reveal">
-    <button class="tab-btn active" onclick="filterServices('all', this)">Todos</button>
-    <button class="tab-btn" onclick="filterServices('live', this)">Activos</button>
-    <button class="tab-btn active-orange" onclick="filterServices('soon', this)" style="background:transparent; color:var(--muted);">Aún no disponibles</button>
-  </div>
-
-  <div class="services-grid reveal" id="servicesGrid">
-
-    <!-- LIVE -->
-    <div class="service-card" data-status="live">
-      <div class="service-num">01</div>
-      <div class="service-icon">🚗</div>
-      <div class="service-name">Detallado Automòvil a Domicilio</div>
-      <div class="service-desc">Tu carro, en tu casa, como nuevo. Servicio profesional completo: Detallado Interior, Exterior Sin que muevas un dedo.</div>
-      <a href="https://wa.me/message/SJAKNLQOZB77A1">  <span class="service-status status-live">Disponible ahora</span>  </a>
-    </div>
-
-<!--    <div class="service-card locked" data-status="live">
-      <div class="service-num">07</div>
-      <div class="service-icon">🚕</div>
-      <div class="service-name">Uber / Didi / InDrive</div>
-      <div class="service-desc">Viajes de confianza o entrega de despensas a domicilio. Puntual y respetuoso.</div>
-      <span class="service-status status-live">Investigando </span>
-    </div> -->
-
-    <!--
-    <div class="service-card locked" data-status="live">
-      <div class="service-num">10</div>
-      <div class="service-icon">🔧</div>
-      <div class="service-name">Handyman</div>
-      <div class="service-desc">Jardinero, manitas, "el que resuelve". Si necesitas a alguien de confianza para lo que sea, aquí estoy.</div>
-      <span class="service-status status-live">Falta de implementaciòn</span>
-    </div> -->
-
-   
-
-    <!-- SOON / NEED SUPPORT -->
-    <div class="service-card locked" data-status="soon">
-      <div class="service-num">01</div>
-      <div class="service-icon">💆</div>
-      <div class="service-name">Masajes Profesionales a Domicilio</div>
-      <div class="service-desc">Relajante, antiestresante, técnicas con piedras. Certificación formal.</div>
-      <span class="service-status status-soon">Necesita certificación</span>
-      <div class="support-note">📚 Apoyo para cursos y diplomas → Ko-fi / PayPal en contacto</div>
-    </div>
-
-    <div class="service-card locked" data-status="soon">
-      <div class="service-num">02</div>
-      <div class="service-icon">🤝</div>
-      <div class="service-name">E-pal / Amigo en Renta</div>
-      <div class="service-desc">Compañía virtual o presencial, respetuosa y seria. Inspirado en modelos japoneses. Necesita portal web completo con reservaciones y T&C.</div>
-      <span class="service-status status-soon">Portal en construcción</span>
-      <div class="support-note">🌐 Comparte / suscríbete para acelerar el lanzamiento</div>
-    </div>
-
-    <div class="service-card locked" data-status="soon">
-      <div class="service-num">03</div>
-      <div class="service-icon">🍰</div>
-      <div class="service-name">Las Delicias del Rorry's Dark Kitchen</div>
-      <div class="service-desc">Repostería y Platillos re-imaginados. Donde lo nutritivo, rico y saludable se encuentran.</div>
-      <span class="service-status status-soon">Próximamente</span>
-      <div class="support-note">🍫 Comparte para que llegue más rápido</div>
-    </div>
-
- <!--   <div class="service-card locked" data-status="soon">
-      <div class="service-num">06</div>
-      <div class="service-icon">✂️</div>
-      <div class="service-name">Barbero a Domicilio</div>
-      <div class="service-desc">Cortes profesionales donde estés. Primero la capacitación, después el servicio. No cobro algo que no domino al 100.</div>
-      <span class="service-status status-soon">Necesita capacitación</span>
-      <div class="support-note">💈 Ko-fi / PayPal para el curso → link en contacto</div>
-    </div> -->
-
-    <!--
-    <div class="service-card locked" data-status="future">
-      <div class="service-num">05</div>
-      <div class="service-icon">💻</div>
-      <div class="service-name">Ingeniero en Software</div>
-      <div class="service-desc">Voy en 70% de la carrera. Ya puedo empezar a sacar proyectos. Apps, automatización, sistemas. En proceso.</div>
-      <span class="service-status status-future">70% completado</span>
-    </div> -->
-
-    <div class="service-card locked" data-status="future">
-      <div class="service-num">04</div>
-      <div class="service-icon">🎵</div>
-      <div class="service-name">Músico — Film & Videogame Scoring</div>
-      <div class="service-desc">El sueño mas grande que tengo: estudiar composición musical para cine y videojuegos en Berkley College of Music.</div>
-      <span class="service-status status-future">Sueño a largo plazo</span>
-    </div>
-
-  </div>
-</section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header reveal">
     <div>
-      <div class="section-tag">Mis Proyectos</div>
-      <h2 class="section-title">Portfolio<br><span class="hl">Online</span></h2>
+      <div class="section-tag">Proyectos</div>
+      <h2 class="section-title">Mi Portfolio<br><span class="hl">Online</span></h2>
     </div>
   </div>
 
@@ -1483,6 +1365,112 @@ footer {
   </div>
 </section>
 
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Servicios</div>
+      <!-- <h2 class="section-title">Top <span class="hl">10</span><br>auto-empleos</h2> -->
+    </div>
+    <p class="services-intro reveal">
+      
+    </p>
+  </div>
+
+  <div class="services-tabs reveal">
+    <button class="tab-btn active" onclick="filterServices('all', this)">Todos</button>
+    <button class="tab-btn" onclick="filterServices('live', this)">Activos</button>
+    <button class="tab-btn active-orange" onclick="filterServices('soon', this)" style="background:transparent; color:var(--muted);">Aún no disponibles</button>
+  </div>
+
+  <div class="services-grid reveal" id="servicesGrid">
+
+    <!-- LIVE -->
+    <div class="service-card" data-status="live">
+      <div class="service-num">01</div>
+      <div class="service-icon">🚗</div>
+      <div class="service-name">Detallado Automòvil a Domicilio</div>
+      <div class="service-desc">Tu carro, en tu casa, como nuevo. Servicio profesional completo: Detallado Interior, Exterior Sin que muevas un dedo.</div>
+      <a href="https://wa.me/message/SJAKNLQOZB77A1">  <span class="service-status status-live">Disponible ahora</span>  </a>
+    </div>
+
+<!--    <div class="service-card locked" data-status="live">
+      <div class="service-num">07</div>
+      <div class="service-icon">🚕</div>
+      <div class="service-name">Uber / Didi / InDrive</div>
+      <div class="service-desc">Viajes de confianza o entrega de despensas a domicilio. Puntual y respetuoso.</div>
+      <span class="service-status status-live">Investigando </span>
+    </div> -->
+
+    <!--
+    <div class="service-card locked" data-status="live">
+      <div class="service-num">10</div>
+      <div class="service-icon">🔧</div>
+      <div class="service-name">Handyman</div>
+      <div class="service-desc">Jardinero, manitas, "el que resuelve". Si necesitas a alguien de confianza para lo que sea, aquí estoy.</div>
+      <span class="service-status status-live">Falta de implementaciòn</span>
+    </div> -->
+
+   
+
+    <!-- SOON / NEED SUPPORT -->
+    <div class="service-card locked" data-status="soon">
+      <div class="service-num">01</div>
+      <div class="service-icon">💆</div>
+      <div class="service-name">Masajes Profesionales a Domicilio</div>
+      <div class="service-desc">Relajante, antiestresante, técnicas con piedras. Certificación formal.</div>
+      <span class="service-status status-soon">Necesita certificación</span>
+      <div class="support-note">📚 Apoyo para cursos y diplomas → Ko-fi / PayPal en contacto</div>
+    </div>
+
+<!--    <div class="service-card locked" data-status="soon">
+      <div class="service-num">02</div>
+      <div class="service-icon">🤝</div>
+      <div class="service-name">E-pal / Amigo en Renta</div>
+      <div class="service-desc">Compañía virtual o presencial, respetuosa y seria. Inspirado en modelos japoneses. Necesita portal web completo con reservaciones y T&C.</div>
+      <span class="service-status status-soon">Portal en construcción</span>
+      <div class="support-note">🌐 Comparte / suscríbete para acelerar el lanzamiento</div>
+    </div> -->
+
+    <div class="service-card locked" data-status="soon">
+      <div class="service-num">03</div>
+      <div class="service-icon">🍰</div>
+      <div class="service-name">Las Delicias del Rorry's Dark Kitchen</div>
+      <div class="service-desc">Repostería y Platillos re-imaginados. Donde lo nutritivo, rico y saludable se encuentran.</div>
+      <span class="service-status status-soon">Próximamente</span>
+      <div class="support-note">🍫 Comparte para que llegue más rápido</div>
+    </div>
+
+ <!--   <div class="service-card locked" data-status="soon">
+      <div class="service-num">06</div>
+      <div class="service-icon">✂️</div>
+      <div class="service-name">Barbero a Domicilio</div>
+      <div class="service-desc">Cortes profesionales donde estés. Primero la capacitación, después el servicio. No cobro algo que no domino al 100.</div>
+      <span class="service-status status-soon">Necesita capacitación</span>
+      <div class="support-note">💈 Ko-fi / PayPal para el curso → link en contacto</div>
+    </div> -->
+
+    <!--
+    <div class="service-card locked" data-status="future">
+      <div class="service-num">05</div>
+      <div class="service-icon">💻</div>
+      <div class="service-name">Ingeniero en Software</div>
+      <div class="service-desc">Voy en 70% de la carrera. Ya puedo empezar a sacar proyectos. Apps, automatización, sistemas. En proceso.</div>
+      <span class="service-status status-future">70% completado</span>
+    </div> -->
+
+<!--    <div class="service-card locked" data-status="future">
+      <div class="service-num">04</div>
+      <div class="service-icon">🎵</div>
+      <div class="service-name">Músico — Film & Videogame Scoring</div>
+      <div class="service-desc">El sueño mas grande que tengo: estudiar composición musical para cine y videojuegos en Berkley College of Music.</div>
+      <span class="service-status status-future">Sueño a largo plazo</span>
+    </div> -->
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -1494,9 +1482,10 @@ footer {
 
     <div class="links-grid reveal">
       
-      <a href="https://t.me/detalladoautomoviladomi" class="link-chip lc-cyan" target="_blank">Telegram</a>
-      <a href="https://youtube.com/@LeonAzurielRodrigo" class="link-chip lc-orange" target="_blank">▶️ YouTube</a>
+    <!--  <a href="https://t.me/detalladoautomoviladomi" class="link-chip lc-cyan" target="_blank">Telegram</a> -->
       <a href="https://github.com/RodrigoGtzChavez" class="link-chip lc-lime"> Github</a>
+
+      <a href="https://youtube.com/@LeonAzurielRodrigo" class="link-chip lc-orange" target="_blank">▶️ YouTube</a>
 
 <!--      <a href="https://tiktok.com/@rorry" class="link-chip lc-pink" target="_blank">♪ TikTok</a>-->
 <!--      <a href="https://t.me/Detallado_Autobot" class="link-chip lc-cyan" target="_blank">🤖 Autobot</a> -->
@@ -1509,7 +1498,7 @@ footer {
       </div>
       <div class="support-btns">
         <a href="https://ko-fi.com/rodrigogtzchavez" class="sbtn" target="_blank">☕ Ko-fi</a>
-        <!-- <a href="https://paypal.me/rorry" class="sbtn" target="_blank">💳 PayPal</a> -->
+        <!-- <a href="https://paypal.me/rorry" class="sbtn" target="_blank">💳 PayPal</a> 
         <a href="https://www.youtube.com/@elianaAIapp" class="sbtn" target="_blank">🔔 Suscribirse</a>
       </div>
     </div>
@@ -1523,40 +1512,7 @@ footer {
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// CURSOR
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
-
-function animateRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width = '16px';
-    cursor.style.height = '16px';
-    ring.style.width = '52px';
-    ring.style.height = '52px';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width = '10px';
-    cursor.style.height = '10px';
-    ring.style.width = '36px';
-    ring.style.height = '36px';
-  });
-});
 
 // SCROLL REVEAL
 const revealEls = document.querySelectorAll('.reveal');
@@ -1958,10 +1914,10 @@ window.addEventListener('scroll', () => {
   const W = canvas.width, H = canvas.height;
 
   const circles = [
-    { label: 'Lo que\namas',         x: W*0.42, y: H*0.28, color: 'rgba(200,255,87,', tc: '#c8ff57' },
-    { label: 'Lo que el\nmundo necesita', x: W*0.62, y: H*0.46, color: 'rgba(74,240,212,', tc: '#4af0d4' },
-    { label: 'Por lo que\nte pagan',  x: W*0.42, y: H*0.68, color: 'rgba(255,108,62,', tc: '#ff6c3e' },
-    { label: 'Lo que\nsabes hacer',   x: W*0.22, y: H*0.46, color: 'rgba(167,139,250,', tc: '#a78bfa' },
+    { label: 'Adaptabilidad',         x: W*0.42, y: H*0.28, color: 'rgba(200,255,87,', tc: '#c8ff57' },
+    { label: 'Soluciones', x: W*0.62, y: H*0.46, color: 'rgba(74,240,212,', tc: '#4af0d4' },
+    { label: 'Ing,\n Software',  x: W*0.42, y: H*0.68, color: 'rgba(255,108,62,', tc: '#ff6c3e' },
+    { label: 'Liderazgo',   x: W*0.22, y: H*0.46, color: 'rgba(167,139,250,', tc: '#a78bfa' },
   ];
   const r = 68;
 
@@ -2012,7 +1968,7 @@ window.addEventListener('scroll', () => {
     ctx.fillStyle = '#c8ff57';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('IKIGAI', cx2, cy2);
+    ctx.fillText('Visión', cx2, cy2);
     ctx.globalAlpha = 1;
   }
 
